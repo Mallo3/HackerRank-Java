@@ -1,0 +1,39 @@
+import java.util.*;
+import java.io.*;
+
+
+
+class Solution{
+    public static void main(String []argh)
+    {
+
+
+
+        Scanner sc = new Scanner(System.in);
+        int t=sc.nextInt();
+
+        for(int i=0;i<t;i++)
+        {
+
+            try
+            {
+                long x=sc.nextLong();
+                System.out.println(x+" can be fitted in:");
+                if(x>=-128 && x<=127)System.out.println("* byte");
+                if(x>=-32768 && x<=32767)System.out.println("* short");
+                if(x>=(int) Math.pow(-2,31) && x<=((int) Math.pow(-2,31))-1)System.out.println("* int");
+                if(x>=(long) Math.pow(-2,63) && x<=((long) Math.pow(-2,63))-1)System.out.println("* long");
+                /*if(x>=3.40282347*(Math.pow(10,38)) && x<=1.40239846 * (Math.pow(10,-45)))System.out.println("* float");
+                if(x>=1.7976931348623157*(Math.pow(10,308)) && x<=4.9406564584124654 * (Math.pow(10,-324)))System.out.println("* double");*/
+            }
+            catch(Exception e)
+            {
+                System.out.println(sc.next()+" can't be fitted anywhere.");
+            }
+
+        }
+    }
+}
+
+
+
